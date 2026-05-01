@@ -156,7 +156,7 @@ function Footer() {
                         Exchange Investor Grievance Redressal Forum, or Arbitration mechanism. Fixed deposits are regulated by
                         the Reserve Bank of India (RBI).</p>
 
-                    <ul className='footer-bottom-list'>
+                    <ul className='footer-bottom-list '>
                         <li><a href="#">NSE </a></li>
                         <li><a href="#">BSE </a></li>
                         <li><a href="#">MCX </a></li>

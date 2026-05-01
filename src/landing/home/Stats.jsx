@@ -59,7 +59,7 @@ function Stats() {
                 </div>
 
                 <div className="col-7 d-flex flex-column justify-content-center align-items-center">
-                    <img src="np/media/ecosystem.png" alt="Awards img" className="img-fluid" />
+                    <img src="/media/ecosystem.png" alt="Awards img" className="img-fluid" />
                     <div className="row mt-4">
                         <p className='d-block'>
                             <a href="#" style={{ textDecoration: "none", fontSize: "1.2rem" }} className='me-5'>Exports our Product<i className="fa-solid fa-arrow-right ms-1"></i></a>
