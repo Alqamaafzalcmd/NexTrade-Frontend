@@ -11,14 +11,14 @@ function Footer() {
                         © 2010 - 2026, Zerodha Broking Ltd.
                     </p>
                     <p className='mt-2 text-muted'>All rights reserved.</p>
-                    <div className="footer-social fs-5" style={{ listStyle: "none" }}>
+                    <div className="footer-social fs-5 text-muted" style={{ listStyle: "none" }}>
                         <i class="fa-brands fa-x-twitter"></i>
                         <i class="fa-brands fa-square-facebook"></i>
                         <i class="fa-brands fa-instagram"></i>
                         <i class="fa-brands fa-linkedin"></i>
                     </div>
                     <hr />
-                    <div className="footer-social mb-4 fs-5" style={{ listStyle: "none" }}>
+                    <div className="footer-social mb-4 fs-5 text-muted" style={{ listStyle: "none" }}>
                         <i class="fa-brands fa-youtube"></i>
                         <i class="fa-brands fa-whatsapp"></i>
                         <i class="fa-brands fa-telegram"></i>
