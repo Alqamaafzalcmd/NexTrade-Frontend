@@ -1,35 +1,24 @@
-import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-
+import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-import Input from "@mui/material/Input";
-
+import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
-
-import Button from "@mui/material/Button";
 
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-export default function Login() {
-  const emailId = React.useId();
-  const passwordId = React.useId();
+import "./Login.css";
 
-  const [showPassword, setShowPassword] = React.useState(false);
+function Login() {
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [formData, setFormData] = React.useState({
-    email: "",
-    password: "",
-  });
-
-  const handleClickShowPassword = () => {
-    setShowPassword((show) => !show);
-  };
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -39,103 +28,116 @@ export default function Login() {
     event.preventDefault();
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const [data, setData] = useState({
+    username_email: "alqma123",
+    password: "12345###",
+  });
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (event) => {
+  let handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log(formData);
+    try {
+      await axios
+        .post("http://localhost:8080/login", data, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    } catch (err) {
+      console.log(err);
+    }
 
-   
+    setData({
+      username_email: "",
+      password: "",
+    });
+  };
+
+  let handleInputChange = (event) => {
+    // console.log(event);
+
+    setData((curr) => {
+      curr[event.target.name] = event.target.value;
+      return { ...curr };
+
+      //  return {...curr, [event.target.name]: event.target.name};
+    });
   };
 
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#f5f5f5",
-      }}
-    >
-      <Paper
-        elevation={4}
-        sx={{
-          p: 4,
-          width: 350,
-          borderRadius: 3,
-        }}
-      >
-        <Typography
-          variant="h5"
-          sx={{
-            textAlign: "center",
-            mb: 3,
-            fontWeight: "bold",
-          }}
-        >
-          Login
-        </Typography>
-
+    <div className="container min-vh-80 d-flex justify-content-center align-item-center m-5">
+      <div className="login-card shadow m-5">
+        <h4 className="text-center mb-4">Login on NexTrade</h4>
         <form onSubmit={handleSubmit}>
-          {/* EMAIL */}
+          <div className="mb-3">
+            <TextField
+              fullWidth
+              required
+              name="username_email"
+              label="username / email"
+              value={data.username_email}
+              onChange={handleInputChange}
+            />
+          </div>
 
-          <FormControl fullWidth variant="standard" sx={{ mb: 3 }}>
-            <InputLabel htmlFor={`${emailId}-input`}>Email</InputLabel>
-
-            <Input
-              id={`${emailId}-input`}
-              type="email"
+          {/* <div className="mb-3">
+            <TextField
+              fullWidth
+              required
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              type="email"
+              label="Email"
+              value={data.email}
+              onChange={handleInputChange}
             />
-          </FormControl>
+          </div> */}
 
-          {/* PASSWORD */}
+          <div className="mb-3">
+            <FormControl fullWidth variant="outlined">
+              <InputLabel htmlFor="password-form">Password</InputLabel>
 
-          <FormControl fullWidth variant="standard" sx={{ mb: 3 }}>
-            <InputLabel htmlFor={`${passwordId}-input`}>Password</InputLabel>
+              <OutlinedInput
+                onChange={handleInputChange}
+                value={data.password}
+                id="password-form"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                label="Password"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      onMouseUp={handleMouseUpPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </div>
 
-            <Input
-              id={`${passwordId}-input`}
-              type={showPassword ? "text" : "password"}
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label={
-                      showPassword ? "hide password" : "show password"
-                    }
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    onMouseUp={handleMouseUpPassword}
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-
-          {/* BUTTON */}
-
-          <Button type="submit" variant="contained" fullWidth>
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className="btn btn-primary w-100"
+          >
             Login
-          </Button>
-          <p className="text-muted text-center" style={{textAlign:"center"}}>forgot user id or password</p>
+          </button>
+
+          <p className="text-center mt-3 mb-0">
+            Don't have an account?
+            <Link to="/signup" className="ms-1">
+              Signup
+            </Link>
+          </p>
         </form>
-      </Paper>
-    </Box>
+      </div>
+    </div>
   );
 }
+
+export default Login;

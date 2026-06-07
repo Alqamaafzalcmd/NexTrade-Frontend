@@ -7,7 +7,8 @@ import AboutPage from './landing/about/AboutPage'
 import PricingPage from './landing/pricing/PricingPage'
 import ProductPage from './landing/product/ProductPage'
 import SupportPage from './landing/support/SupportPage'
-import Signup from './landing/signup/Signup'
+import Signup from './landing/users/Signup'
+import Login from './landing/users/Login'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
     <Routes>
       <Route path="/" element={<HomePage />} ></Route>
       <Route path="/signup" element={<Signup />} ></Route>
+      <Route path="/login" element={<Login/>}></Route>
       <Route path="/about" element={<AboutPage />} ></Route>
       <Route path="/product" element={<ProductPage />} ></Route>
       <Route path="/pricing" element={<PricingPage />} ></Route>
