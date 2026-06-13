@@ -1,0 +1,16 @@
+
+.box img{
+    width:50%;
+    margin-top:10px;
+
+}
+
+.box{
+    
+    padding:30px;
+}
+
+.box p{
+    font-size: smaller;
+   padding:20px;
+}
