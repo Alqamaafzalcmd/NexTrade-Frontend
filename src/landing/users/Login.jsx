@@ -13,9 +13,15 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
+import { toast, Bounce } from "react-toastify";
+
+import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 
 function Login() {
+   const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -37,15 +43,26 @@ function Login() {
     event.preventDefault();
 
     try {
-      await axios
-        .post("http://localhost:8080/login", data, {
-          withCredentials: true,
-        })
-        .then((res) => {
-          console.log(res);
-        });
+      let res = await axios.post("http://localhost:8080/login", data, {
+        withCredentials: true,
+      });
+
+      console.log(res);
+      window.location.href = "http://localhost:5174/";
+
     } catch (err) {
-      console.log(err);
+      // console.log(err);
+      toast.error(err.response.data.message, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     }
 
     setData({

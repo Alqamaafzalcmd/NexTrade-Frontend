@@ -10,7 +10,15 @@ function Navbar() {
       >
         <div className="container p-2 ">
           <Link className="navbar-brand" to="/">
-            <img src="/media/logo.svg" alt="logo" style={{ width: "24%" }} />
+            <img
+              src="/media/logo.svg"
+              alt="logo"
+              style={{
+                width: "120px",
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </Link>
           <button
             className="navbar-toggler"
@@ -23,9 +31,19 @@ function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <form className="d-flex align-item-center mb-4" role="search">
-              <ul className="navbar-nav me-4 mb-2 mb-lg-0 ">
+
+          <div
+            className="collapse navbar-collapse  justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <form
+              className="d-flex align-item-center mb-4"
+              role="search"
+            >
+              <ul
+                className="navbar-nav me-4 mb-2 mt-3 mb-lg-0 "
+                style={{ backgroundColor: "#f8f5f5", width: "50%" }}
+              >
                 <li className="nav-item">
                   <Link
                     className="nav-link active"
@@ -67,9 +85,9 @@ function Navbar() {
                     Support
                   </Link>
                 </li>
-                <li className="nav-item" style={{ marginTop: "30px" }}>
+                {/* <li className="nav-item" style={{ marginTop: "30px" }}>
                   <i className="nav-link fa-solid fa-bars"></i>
-                </li>
+                </li> */}
               </ul>
             </form>
           </div>

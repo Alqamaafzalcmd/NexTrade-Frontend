@@ -13,6 +13,8 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
+import { toast, Bounce } from "react-toastify";
+
 import "./Login.css";
 
 function Signup() {
@@ -38,13 +40,26 @@ function Signup() {
     event.preventDefault();
 
     try {
-      axios
-        .post("http://localhost:8080/signup", data, { withCredentials: true })
-        .then((res) => {
-          console.log(res);
-        });
+      const res = await axios.post("http://localhost:8080/signup", data, {
+        withCredentials: true,
+      });
+
+      console.log(res.data);
+      window.location.href = "http://localhost:5174/";
     } catch (err) {
-      console.log(err);
+      // const message = err.response.data.message;
+      // console.log(message);
+      toast.error(err.response.data.message, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     }
 
     setData({
@@ -125,7 +140,7 @@ function Signup() {
             type="submit"
             className="btn btn-primary w-100"
           >
-            Login
+            Signup
           </button>
 
           <p className="text-center mt-3 mb-0">
