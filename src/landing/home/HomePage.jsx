@@ -1,32 +1,54 @@
-import { React } from 'react';
+import React,{ useEffect } from "react";
+import axios from "axios";
 
-import Hero from './Hero';
-import Pricing from './Pricing';
-import Awards from './Awards';
-import Education from './Education';
-import Stats from './Stats'
+import Hero from "./Hero";
+import Pricing from "./Pricing";
+import Awards from "./Awards";
+import Education from "./Education";
+import Stats from "./Stats";
 
-import OpenAccount from '../OpenAccount';
-import Navbar from '../Navbar'
-import Footer from '../Footer'
-
+import OpenAccount from "../OpenAccount";
+import Swal from "sweetalert2";
+import "./swal.css"
 
 
 function HomePage() {
-    return (
-        <>
 
-           
-            <Hero />
-            <Stats />
-            <Pricing />
-            <Education />
-            <OpenAccount />
-            {/* <Awards /> */}
-        
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/auth", {
+        withCredentials: true,
+      })
+      .then(() => {
+        Swal.fire({
+          title: "Welcome Back!",
+          text: "You're already logged in. Redirecting to your dashboard...",
+          icon: "success",
+          timer: 2500,
+          timerProgressBar: true,
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          allowEnterKey: false,
+          customClass: {
+            popup: "session-expired-popup",
+          },
+        }).then(() => {
+          window.location.href = "http://localhost:5174";
+        });
+      })
+      .catch(() => {});
+  }, []);
 
-        </>
-    )
+  return (
+    <>
+      <Hero />
+      <Stats />
+      <Pricing />
+      <Education />
+      <OpenAccount />
+    </>
+  );
 }
 
 export default HomePage;

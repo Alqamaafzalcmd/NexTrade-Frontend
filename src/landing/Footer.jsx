@@ -6,7 +6,7 @@ function Footer() {
         <div className="ps-5 pe-3 bg-body-tertiary  pb-5 border-top" style={{ backgroundColor: "#fff" }}>
             <div className="row pt-5 ps-1">
                 <div className="col first-col">
-                    <img src="/media/logo.svg" alt="logo" style={{ width: "70%" }} />
+                    <img src="/media/logo.png" alt="logo" style={{ width: "60%" }} />
                     <p className='mt-4 text-muted'>
                         © 2010 - 2026, Zerodha Broking Ltd.
                     </p>

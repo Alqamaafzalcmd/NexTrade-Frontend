@@ -1,8 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -15,13 +14,11 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { toast, Bounce } from "react-toastify";
 
-import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import "./Login.css";
 
 function Login() {
-   const navigate = useNavigate();
-
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -35,23 +32,35 @@ function Login() {
   };
 
   const [data, setData] = useState({
-    username_email: "alqma123",
-    password: "12345###",
+    username_email: "alqama123",
+    password: "12345",
   });
 
   let handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      let res = await axios.post("http://localhost:8080/login", data, {
+      await axios.post("http://localhost:8080/auth/login", data, {
         withCredentials: true,
       });
 
-      console.log(res);
-      window.location.href = "http://localhost:5174/";
-
+      Swal.fire({
+        title: "Welcome Back!",
+        text: "Logging you in...... ",
+        icon: "success",
+        timer: 2500,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        customClass: {
+          popup: "session-expired-popup",
+        },
+      }).then(() => {
+        window.location.href = "http://localhost:5174";
+      });
     } catch (err) {
-      // console.log(err);
       toast.error(err.response.data.message, {
         position: "top-center",
         autoClose: 1000,
@@ -72,13 +81,9 @@ function Login() {
   };
 
   let handleInputChange = (event) => {
-    // console.log(event);
-
     setData((curr) => {
       curr[event.target.name] = event.target.value;
       return { ...curr };
-
-      //  return {...curr, [event.target.name]: event.target.name};
     });
   };
 

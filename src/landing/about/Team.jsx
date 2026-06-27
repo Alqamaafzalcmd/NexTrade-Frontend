@@ -10,8 +10,8 @@ function Team() {
             <div className="row mb-5 fs-6" >
 
                 <div className="col p-3 text-center">
-                    <img src="/media/nithinKamath.jpg" alt="" style={{ borderRadius: "100%", width: "295px", height: "295px" }} />
-                    <h3 className='text-muted  mt-3'>Nithin Kamath</h3>
+                    <img src="/media/founder.jpg" alt="" style={{ borderRadius: "100%", width: "295px", height: "295px" }} />
+                    <h3 className='text-muted  mt-3'>Alqama Afzal</h3>
                     <h6 className='text-muted mt-3'>Founder, CEO</h6>
                 </div>
 

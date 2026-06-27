@@ -11,10 +11,11 @@ function Navbar() {
         <div className="container p-2 ">
           <Link className="navbar-brand" to="/">
             <img
-              src="/media/logo.svg"
+            className='mt-1'
+              src="/media/logo.png"
               alt="logo"
               style={{
-                width: "120px",
+                width: "180px",
                 maxWidth: "100%",
                 height: "auto",
               }}
@@ -36,10 +37,7 @@ function Navbar() {
             className="collapse navbar-collapse  justify-content-end"
             id="navbarSupportedContent"
           >
-            <form
-              className="d-flex align-item-center mb-4"
-              role="search"
-            >
+            <form className="d-flex align-item-center mb-4" role="search">
               <ul
                 className="navbar-nav me-4 mb-2 mt-3 mb-lg-0 "
                 style={{ backgroundColor: "#f8f5f5", width: "50%" }}
@@ -51,6 +49,15 @@ function Navbar() {
                     to="/signup"
                   >
                     Signup
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/login"
+                  >
+                    Login
                   </Link>
                 </li>
                 <li className="nav-item">

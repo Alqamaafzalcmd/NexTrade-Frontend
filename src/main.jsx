@@ -16,14 +16,14 @@ import Footer from "./landing/Footer";
 import NotFound from "./landing/NotFound";
 
 // flash message with toaster
-import { ToastContainer,Bounce } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Flash from "./Flash";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Navbar></Navbar>
+    <Navbar />
 
     <ToastContainer
       position="top-center"
@@ -39,9 +39,9 @@ createRoot(document.getElementById("root")).render(
       transition={Bounce}
     />
 
-    {/* <Flash></Flash> */}
 
     <Routes>
+      <Route path="/login" element={<Login />}></Route>
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/signup" element={<Signup />}></Route>
       <Route path="/login" element={<Login />}></Route>
@@ -52,6 +52,6 @@ createRoot(document.getElementById("root")).render(
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
 
-    <Footer></Footer>
+    <Footer />
   </BrowserRouter>,
 );

@@ -1,8 +1,7 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -31,24 +30,21 @@ function Signup() {
   };
 
   const [data, setData] = useState({
-    username: "alqma123",
+    username: "alqama123",
     email: "alqama@gmail.com",
-    password: "12345###",
+    password: "12345",
   });
 
   let handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8080/signup", data, {
+      await axios.post("http://localhost:8080/auth/signup", data, {
         withCredentials: true,
       });
 
-      console.log(res.data);
       window.location.href = "http://localhost:5174/";
     } catch (err) {
-      // const message = err.response.data.message;
-      // console.log(message);
       toast.error(err.response.data.message, {
         position: "top-center",
         autoClose: 1000,
@@ -70,13 +66,9 @@ function Signup() {
   };
 
   let handleInputChange = (event) => {
-    // console.log(event);
-
     setData((curr) => {
       curr[event.target.name] = event.target.value;
       return { ...curr };
-
-      //  return {...curr, [event.target.name]: event.target.name};
     });
   };
 
@@ -136,7 +128,6 @@ function Signup() {
           </div>
 
           <button
-            onClick={handleSubmit}
             type="submit"
             className="btn btn-primary w-100"
           >
