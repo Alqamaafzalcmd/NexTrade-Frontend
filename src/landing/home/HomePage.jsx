@@ -14,31 +14,31 @@ import "./swal.css"
 
 function HomePage() {
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}`, {
-        withCredentials: true,
-      })
-      .then(() => {
-        Swal.fire({
-          title: "Welcome Back!",
-          text: "You're already logged in. Redirecting to your dashboard...",
-          icon: "success",
-          timer: 2500,
-          timerProgressBar: true,
-          showConfirmButton: false,
-          allowOutsideClick: false,
-          allowEscapeKey: false,
-          allowEnterKey: false,
-          customClass: {
-            popup: "session-expired-popup",
-          },
-        }).then(() => {
-          window.location.href = import.meta.env.VITE_DASHBOARD_URL;
-        });
-      })
-      .catch(() => {});
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_BACKEND_URL}`, {
+  //       withCredentials: true,
+  //     })
+  //     .then(() => {
+  //       Swal.fire({
+  //         title: "Welcome Back!",
+  //         text: "You're already logged in. Redirecting to your dashboard...",
+  //         icon: "success",
+  //         timer: 2500,
+  //         timerProgressBar: true,
+  //         showConfirmButton: false,
+  //         allowOutsideClick: false,
+  //         allowEscapeKey: false,
+  //         allowEnterKey: false,
+  //         customClass: {
+  //           popup: "session-expired-popup",
+  //         },
+  //       }).then(() => {
+  //         window.location.href = import.meta.env.VITE_DASHBOARD_URL;
+  //       });
+  //     })
+  //     .catch(() => {});
+  // }, []);
 
   return (
     <>
