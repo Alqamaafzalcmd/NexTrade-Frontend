@@ -16,7 +16,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/auth", {
+      .get(`${import.meta.env.VITE_BACKEND_URL}`, {
         withCredentials: true,
       })
       .then(() => {
@@ -34,7 +34,7 @@ function HomePage() {
             popup: "session-expired-popup",
           },
         }).then(() => {
-          window.location.href = "http://localhost:5174";
+          window.location.href = import.meta.env.VITE_DASHBOARD_URL;
         });
       })
       .catch(() => {});

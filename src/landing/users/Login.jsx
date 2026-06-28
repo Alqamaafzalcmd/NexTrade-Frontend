@@ -40,7 +40,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      await axios.post("http://localhost:8080/auth/login", data, {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, data, {
         withCredentials: true,
       });
 
@@ -58,8 +58,9 @@ function Login() {
           popup: "session-expired-popup",
         },
       }).then(() => {
-        window.location.href = "http://localhost:5174";
+        window.location.href = import.meta.env.VITE_DASHBOARD_URL;
       });
+      
     } catch (err) {
       toast.error(err.response.data.message, {
         position: "top-center",
@@ -143,7 +144,6 @@ function Login() {
           </div>
 
           <button
-            onClick={handleSubmit}
             type="submit"
             className="btn btn-primary w-100"
           >

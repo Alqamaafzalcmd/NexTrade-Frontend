@@ -39,11 +39,15 @@ function Signup() {
     event.preventDefault();
 
     try {
-      await axios.post("http://localhost:8080/auth/signup", data, {
-        withCredentials: true,
-      });
+      await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/auth/signup`,
+        data,
+        {
+          withCredentials: true,
+        },
+      );
 
-      window.location.href = "http://localhost:5174/";
+      window.location.href = import.meta.env.VITE_DASHBOARD_URL;
     } catch (err) {
       toast.error(err.response.data.message, {
         position: "top-center",
