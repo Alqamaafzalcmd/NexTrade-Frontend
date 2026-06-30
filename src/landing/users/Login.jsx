@@ -32,8 +32,8 @@ function Login() {
   };
 
   const [data, setData] = useState({
-    username_email: "alqama123",
-    password: "12345",
+    username_email: "demouser@gmail.com",
+    password: "demo123###",
   });
 
   let handleSubmit = async (event) => {
