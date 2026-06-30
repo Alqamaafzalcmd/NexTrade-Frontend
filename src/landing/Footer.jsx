@@ -1,4 +1,4 @@
-import { React } from 'react';
+﻿import { React } from 'react';
 import "./Footer.css"
 
 function Footer() {
@@ -8,7 +8,7 @@ function Footer() {
                 <div className="col first-col">
                     <img src="/media/logo.png" alt="logo" style={{ width: "60%" }} />
                     <p className='mt-4 text-muted'>
-                        © 2010 - 2026, Zerodha Broking Ltd.
+                        Â© 2010 - 2026, NexTrade Broking Ltd.
                     </p>
                     <p className='mt-2 text-muted'>All rights reserved.</p>
                     <div className="footer-social fs-5 text-muted" style={{ listStyle: "none" }}>
@@ -71,8 +71,8 @@ function Footer() {
                         <li><a href="#">Philosophy</a></li>
                         <li><a href="#"> Press & media</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Zerodha Cares (CSR)</a></li>
-                        <li><a href="#">  Zerodha.tech</a></li>
+                        <li><a href="#">NexTrade Cares (CSR)</a></li>
+                        <li><a href="#">  NexTrade.tech</a></li>
                         <li><a href="#">Open source</a></li>
                         <li><a href="#"> Referral program</a></li>
                     </ul>
@@ -97,13 +97,13 @@ function Footer() {
 
             <div className="container">
                 <div className="row text-muted footer-bottom pt-5 ">
-                    <p>Zerodha Broking Ltd.: Member of NSE, BSE, MCX & MSEI - SEBI Registration no.:
-                        INZ000031633 CDSL/NSDL: Depository services through Zerodha Broking Ltd. -
-                        SEBI Registration no.: IN-DP-431-2019 Registered Address: Zerodha Broking Ltd.,
+                    <p>NexTrade Broking Ltd.: Member of NSE, BSE, MCX & MSEI - SEBI Registration no.:
+                        INZ000031633 CDSL/NSDL: Depository services through NexTrade Broking Ltd. -
+                        SEBI Registration no.: IN-DP-431-2019 Registered Address: NexTrade Broking Ltd.,
                         #153/154, 4th Cross, Dollars Colony, Opp. Clarence Public School, J.P Nagar
                         4th Phase, Bengaluru - 560078, Karnataka, India. For any complaints pertaining
-                        to securities broking please write to <a href="#">complaints@zerodha.com</a>, for DP related to
-                        <a href="#" className='ms-2'>dp@zerodha.com</a>. Please ensure you carefully read the
+                        to securities broking please write to <a href="#">complaints@nextrade.com</a>, for DP related to
+                        <a href="#" className='ms-2'>dp@nextrade.com</a>. Please ensure you carefully read the
                         Risk Disclosure Document as
                         prescribed by SEBI | ICF
                     </p>
@@ -141,7 +141,7 @@ function Footer() {
                         the IPO application form to authorize your bank to make payment in case of allotment. In case
                         of non allotment the funds will remain in your bank account. As a business we don't give stock
                         tips, and have not authorized anyone to trade on behalf of others. If you find anyone claiming
-                        to be part of Zerodha and offering such services, please <a href="#">create a ticket here</a>.</p>
+                        to be part of NexTrade and offering such services, please <a href="#">create a ticket here</a>.</p>
 
 
                     <p>*Customers availing insurance advisory services offered by Ditto (Tacterial Consulting Private
@@ -150,7 +150,7 @@ function Footer() {
                         for such products.</p>
 
                     <p>Fixed deposit products offered on this platform are third-party products (TPP) and are not Exchange
-                        traded products. These are offered through Blostem Fintech Private Limited. Zerodha Broking
+                        traded products. These are offered through Blostem Fintech Private Limited. NexTrade Broking
                         Limited (SEBI Registration No.: INZ000031633) is acting solely as a distributor for these products.
                         Any disputes arising with respect to such distribution activity will not have access to SEBI SCORES/ODR,
                         Exchange Investor Grievance Redressal Forum, or Arbitration mechanism. Fixed deposits are regulated by

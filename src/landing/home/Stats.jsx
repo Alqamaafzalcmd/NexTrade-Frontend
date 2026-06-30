@@ -1,4 +1,4 @@
-import { React } from 'react';
+﻿import { React } from 'react';
 
 function Stats() {
     return (
@@ -15,7 +15,7 @@ function Stats() {
                             Customer-first always
                         </h3>
                         <p >That's why 1.6+ crore customers trust
-                            Zerodha with ~ ₹6 lakh crores of equity
+                            NexTrade with ~ â‚¹6 lakh crores of equity
                             investments, making us India's largest
                             broker; contributing to 15% of daily retail
                             exchange volumes in India.</p>
@@ -46,7 +46,7 @@ function Stats() {
 
                     <div className="mt-4">
                         <h3 className='fs-4'>
-                            The Zerodha universe
+                            The NexTrade universe
                         </h3>
                         <p >Not just an app, but a whole ecosystem.
                             Our investments in 30+ fintech startups

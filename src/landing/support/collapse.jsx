@@ -1,10 +1,10 @@
-const data = [
+﻿const data = [
   [
     "Account Openning",
     <i class="fa-solid fa-circle-plus" style={{ color: "#397DD0" }}></i>,
   ],
   [
-    "Open Zerodha Account",
+    "Open NexTrade Account",
     <i class="fa-solid fa-circle-user" style={{ color: "#397DD0" }}></i>,
   ],
   ["Kite", <i class="fa-brands fa-accusoft" style={{ color: "#397DD0" }}></i>],
@@ -62,3 +62,4 @@ const topics = [
 ];
 
 export { data, topics };
+

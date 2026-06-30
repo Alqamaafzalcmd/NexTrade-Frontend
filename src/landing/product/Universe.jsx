@@ -1,11 +1,11 @@
-import React from 'react'
+﻿import React from 'react'
 import "./Universe.css"
 
 function Universe() {
     return (
       <div className="container text-center">
         <div className="row mt-5 pt-5 ">
-          <h1 className="fs-4">The Zerodha Universe</h1>
+          <h1 className="fs-4">The NexTrade Universe</h1>
           <p className="mt-3">
             Extend your trading and investment experience even further with our
             partner platforms

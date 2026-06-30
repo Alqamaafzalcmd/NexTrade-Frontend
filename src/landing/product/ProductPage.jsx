@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 import Hero from "./Hero";
 import LeftSection from "./LeftSection";
@@ -24,7 +24,7 @@ function ProductPage() {
       />
       <RightSection
         productName="Console"
-        productDescription="The central dashboard for your Zerodha account.
+        productDescription="The central dashboard for your NexTrade account.
          Gain insights into your trades and investments with in-depth reports 
          and visualisations."
         urlLink="#"
@@ -71,7 +71,7 @@ function ProductPage() {
       <p className="fs-5 text-center text-muted">
         Want to know more about our technology stack? Check out the &nbsp;
         <a href="#" style={{ textDecoration: "none" }}>
-          Zerodha.tech
+          NexTrade.tech
         </a>
         &nbsp; blog.
       </p>
@@ -82,3 +82,4 @@ function ProductPage() {
 }
 
 export default ProductPage;
+
